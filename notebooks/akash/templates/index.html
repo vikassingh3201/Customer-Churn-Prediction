@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+ <div class="login">
+	<h1>Customer Churn Prediction</h1>
+
+    <form action="{{ url_for('model')}}"method="post">
+    	<input type="text" name="state" placeholder="State" required="required" />
+        <input type="text" name="account_length" placeholder="account_length" required="required" />
+		<input type="text" name="area_code" placeholder="area_code" required="required" />
+		<input type="text" name="international_plan" placeholder="international_plan" required="required" />
+        <input type="text" name="voice_mail_plan" placeholder="voice_mail_plan" required="required" />
+        <input type="text" name="number_vmail_messages" placeholder="number_vmail_messages" required="required" />
+		<input type="text" name="total_day_minutes" placeholder="total_day_minutes" required="required" />
+		<input type="text" name="total_day_calls" placeholder="total_day_calls" required="required" />
+        <input type="text" name="total_day_charge" placeholder="total_day_charge" required="required" />
+        <input type="text" name="total_eve_minutes" placeholder="total_eve_minutes" required="required" />
+		<input type="text" name="total_eve_calls" placeholder="total_eve_calls" required="required" />
+		<input type="text" name="total_eve_charge" placeholder="total_eve_charge" required="required" />
+        <input type="text" name="total_night_minutes" placeholder="total_night_minutes" required="required" />
+		<input type="text" name="total_night_calls" placeholder="total_night_calls" required="required" />
+        <input type="text" name="total_night_charge" placeholder="total_night_charge" required="required" />
+        <input type="text" name="total_intl_minutes" placeholder="total_intl_minutes" required="required" />
+        <input type="text" name="total_intl_calls" placeholder="total_intl_calls" required="required" />
+		<input type="text" name="total_intl_charge" placeholder="total_intl_charge" required="required" />
+		<input type="text" name="number_customer_service_calls" placeholder="number_customer_service_calls" required="required" />
+
+        <button type="submit" >Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ result }}
+ </div>
+
+</body>
+</html>
