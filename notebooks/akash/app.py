@@ -33,7 +33,7 @@ def model():
     try:
         if (prediction == 1):
             output = "The Customer will Churn"
-        else:
+        if (prediction == 0):
             output = "The Customer will not Churn"
     except:
         output = "Error"
