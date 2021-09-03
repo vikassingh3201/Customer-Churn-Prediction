@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    
+<body>
+ <div class="user_input">
+	<h1>Customer Churn Prediction</h1>
+
+    <form action="{{ url_for('model')}}"method="post">
+        <textarea name="data" rows="25" cols="100"></textarea>
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+ </div>
+</body>
+</html>
