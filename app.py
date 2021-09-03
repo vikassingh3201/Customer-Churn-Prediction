@@ -29,14 +29,16 @@ def model():
     for col in features_df.columns[features_df.dtypes == 'object']:
         features_df[col]=features_df[col].astype('category').cat.codes
         
-    prediction = model.predict_proba(features_df)
-    predict = model.predict(features_df)
-    predict_prob = round(prediction[0][0],2)
-    
-    result={
-         "predict_prob":predict_prob,
-          }
+    predict_prob = model.predict_proba(features_df).tolist()
+    prediction = model.predict(features_df).tolist()
+    threshold_val=0.5
 
+    result={
+        "predict":prediction[0],
+        "predict_prob":round(predict_prob[0][1],2),
+        "threshold":threshold_val
+          }
+    
     return jsonify(result)
 
 if __name__ == "__main__":
