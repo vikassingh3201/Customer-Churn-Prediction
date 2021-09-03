@@ -11,7 +11,7 @@ def home():
 
 @app.route('/model',methods=['POST'])
 def model():
-    model = pickle.load(open('modelv1.pkl', 'rb'))
+    model = pickle.load(open('artifacts/modelv1.pkl', 'rb'))
     
     features = [np.array([x for x in request.form.values()])]
     print(features)
