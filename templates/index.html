@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html >
-<head>
-    <meta charset="UTF-8">
-</head>
-
+<html>
 <style>
+    h1{
+        text-align: center;
+    }
     .grid-container {
       display: grid;
-      grid-template-columns: auto auto auto;
-      padding: 10px;
+      grid-template-columns: auto auto auto auto;
     }
     
     .grid-item {
-      font-size: 30px;
+      font-size: 10px;
       text-align: center;
+    }
+    #btn{
+        text-align: center;
+        margin-left: 46%;
+        margin-top: 4%;
+        padding: 6px 18px;
+        font-size: 16px;
+    }
+    p{
+        font-size: 20px;
     }
     </style>
     
@@ -24,65 +32,93 @@
     <form action="{{ url_for('model')}}"method="post">
         <div class="grid-container">
             <div class="grid-item">
-                <input type="text" name="state" placeholder="State" required="required" />
+                <p>State</p>
+                <input type="text" name="state" placeholder="Eg:NJ/OH" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="account_length" placeholder="account_length" required="required" />
+                 <p>Account Length</p>
+                <input type="text" name="account_length" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="area_code" placeholder="area_code" required="required" />
+                <p>Area Code</p>
+                <select name="area_code">
+                    <option value="area_code_415">area_code_415</option>
+                    <option value="area_code_408">area_code_408</option>
+                    <option value="area_code_510">area_code_510	</option>
+                  </select>
             </div>
             <div class="grid-item">
-                <input type="text" name="international_plan" placeholder="international_plan" required="required" />
+                <p>International Plan</p>
+                <select name="international_plan">
+                    <option value="yes">yes</option>
+                    <option value="no">no</option>
+                  </select>
             </div>
             <div class="grid-item">
-                <input type="text" name="voice_mail_plan" placeholder="voice_mail_plan" required="required" />
+                <p>Voice Mail Plan</p>
+                <select name="voice_mail_plan">
+                    <option value="yes">yes</option>
+                    <option value="no">no</option>
+                  </select>
             </div>
             <div class="grid-item">
-                <input type="text" name="number_vmail_messages" placeholder="number_vmail_messages" required="required" />
+                <p>Number vmail Messages</p>
+                <input type="text" name="number_vmail_messages" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_day_minutes" placeholder="total_day_minutes" required="required" />
+                <p>Total Day Minutes</p>
+                <input type="text" name="total_day_minutes" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_day_calls" placeholder="total_day_calls" required="required" />
+                <p>Total Day Calls</p>
+                <input type="text" name="total_day_calls" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_day_charge" placeholder="total_day_charge" required="required" />
+                <p>Total Day Charge</p>
+                <input type="text" name="total_day_charge" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_eve_minutes" placeholder="total_eve_minutes" required="required" />
+                <p>Total Evening Minutes</p>
+                <input type="text" name="total_eve_minutes" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_eve_calls" placeholder="total_eve_calls" required="required" />
+                <p>Total Evening Calls</p>
+                <input type="text" name="total_eve_calls" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_eve_charge" placeholder="total_eve_charge" required="required" />
+                <p>Total Evening Charge</p>
+                <input type="text" name="total_eve_charge" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_night_minutes" placeholder="total_night_minutes" required="required" />
+                <p>Total Night Minutes</p>
+                <input type="text" name="total_night_minutes" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_night_calls" placeholder="total_night_calls" required="required" />
+                <p>Total Night Calls</p>
+                <input type="text" name="total_night_calls" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_night_charge" placeholder="total_night_charge" required="required" />
+                <p>Total Night Charge</p>
+                <input type="text" name="total_night_charge" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_intl_minutes" placeholder="total_intl_minutes" required="required" />
+                <p>Total International Minutes</p>
+                <input type="text" name="total_intl_minutes" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_intl_calls" placeholder="total_intl_calls" required="required" />
+                <p>Total International Calls</p>
+                <input type="text" name="total_intl_calls" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="total_intl_charge" placeholder="total_intl_charge" required="required" />
+                <p>Total International Charge</p>
+                <input type="text" name="total_intl_charge" required="required" />
             </div>
             <div class="grid-item">
-                <input type="text" name="number_customer_service_calls" placeholder="number_customer_service_calls" required="required" />
+                <p>No of Customer Service  Calls</p>
+                <input type="text" name="number_customer_service_calls" required="required" />
             </div>
         </div>
-
-        <button type="submit" >Predict</button>
+        <button type="submit" id="btn">Predict</button>
     </form>
  </div>
 
